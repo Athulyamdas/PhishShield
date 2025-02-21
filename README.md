@@ -9,17 +9,18 @@ To run the whole project in a single run, run the python file main.py
 
 This will run the scripts in the following sequence:
 
-data_preprocessing.py
-data_visualization.py
-handle_outliers.py
-train_logistic_regression.py
-Train_Ridge_Lasso.py
-train_decision_tree.py
-train_knn.py
-train_random_forest.py
-train_svc.py
-Model_Evaluation.py
-random_forest_top20_vs_all.py
-app.py
+├── data_preprocessing.py
+├── data_visualization.py
+├── handle_outliers.py
+├── train_logistic_regression.py
+├── Train_Ridge_Lasso.py
+├── train_decision_tree.py
+├── train_knn.py
+├── train_random_forest.py
+├── train_svc.py
+├── Model_Evaluation.py
+├── random_forest_top20_vs_all.py
+├── app.py
+
 Once the execution is complete, visit the following URL to check whether a given URL is phishing or legitimate:
 http://127.0.0.1:5000/
