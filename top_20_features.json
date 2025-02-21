@@ -1,0 +1,22 @@
+[
+    "URLSimilarityIndex",
+    "LineOfCode",
+    "NoOfExternalRef",
+    "NoOfImage",
+    "NoOfSelfRef",
+    "NoOfJS",
+    "NoOfCSS",
+    "HasCopyrightInfo",
+    "HasDescription",
+    "HasSocialNet",
+    "NoOfOtherSpecialCharsInURL",
+    "IsHTTPS",
+    "LargestLineLength",
+    "DomainTitleMatchScore",
+    "NoOfDegitsInURL",
+    "URLLength",
+    "URLTitleMatchScore",
+    "DegitRatioInURL",
+    "SpacialCharRatioInURL",
+    "HasSubmitButton"
+]

@@ -1,0 +1,14 @@
+{
+    "Random Forest (All Features)": {
+        "Accuracy": 0.999978795139846,
+        "Precision": 0.999963012279923,
+        "Recall": 1.0,
+        "F1 Score": 0.9999815057979323
+    },
+    "Random Forest (Top 20 Features)": {
+        "Accuracy": 1.0,
+        "Precision": 1.0,
+        "Recall": 1.0,
+        "F1 Score": 1.0
+    }
+}
