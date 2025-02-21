@@ -25,9 +25,5 @@ This will run the scripts in the following sequence:
 Once the execution is complete, visit the following URL to check whether a given URL is phishing or legitimate:
 http://127.0.0.1:5000/
 
-![2025-02-21 (6)](https://github.com/user-attachments/assets/75053318-d108-46e1-b55a-f66ce30d4c10)
 
-![2025-02-21 (7)](https://github.com/user-attachments/assets/471ffab0-7dbd-4c77-9eed-130d31fba836)
-
-![2025-02-21 (8)](https://github.com/user-attachments/assets/f48dd16e-fecc-46e5-9f44-d1b7f9eb998c)
 
