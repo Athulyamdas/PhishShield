@@ -46,6 +46,17 @@ print(f"Confusion Matrix:\n{conf_matrix_rf}")
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred_rf))
 
+# Confusion Matrix Visualization
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix_rf, annot=True, fmt="d", cmap="Blues", cbar=False,
+            xticklabels=["Legitimate", "Phishing"],
+            yticklabels=["Legitimate", "Phishing"])
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.title("Confusion Matrix - Random Forest")
+plt.show()
+
+
 # Feature Importance
 rf_feature_importance = rf_model.feature_importances_
 rf_feature_importance_df = pd.DataFrame({
