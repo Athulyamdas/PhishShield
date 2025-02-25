@@ -13,6 +13,7 @@ scripts = [
     "train_svc.py",
     "Model_Evaluation.py",
     "random_forest_top20_vs_all.py",
+    "model_testing.py",
     "app.py"
 ]
 
