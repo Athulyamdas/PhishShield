@@ -55,7 +55,7 @@ http://127.0.0.1:5000/
 |Special Char Ratio in URL|	The ratio of special characters to the total length of the URL. High ratios are common in phishing URLs.|
 |Is Https|	Checks if the URL uses HTTPS. While HTTPS is generally more secure, phishing sites can also use HTTPS to appear legitimate.|
 |Line of Code|	Total lines of code present in the webpage's HTML. Phishing sites often have minimal or obfuscated code.|
-|Largest Line Length	Length of the longest line in the webpage's HTML code. Very long lines might indicate obfuscation.
+|Largest Line Length|	Length of the longest line in the webpage's HTML code. Very long lines might indicate obfuscation.|
 |Has Title|	Checks if the webpage has a title tag. Legitimate websites almost always include a title.|
 |Title	|The content of the title tag. Phishing sites may use misleading titles to appear legitimate.|
 |Domain Title Match Score|	Measures the similarity between the domain name and the webpage title. Higher similarity scores are typically seen in legitimate sites.|
