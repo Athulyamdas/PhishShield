@@ -26,5 +26,10 @@ This will run the scripts in the following sequence:
 Once the execution is complete, visit the following URL to check whether a given URL is phishing or legitimate:
 http://127.0.0.1:5000/
 
+**Features and its Description**
 
+|Feature |Description|
+|--------|-----------|
+|URL Length|The total number of characters in the URL. Longer URLs can be suspicious, as phishing sites often use lengthy URLs to obscure the actual domain.|
+|Domain|The main part of the URL that identifies the website (e.g., example.com). Phishing sites may use domains that closely resemble legitimate sites.|
 
