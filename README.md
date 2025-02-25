@@ -20,6 +20,7 @@ This will run the scripts in the following sequence:
 ├── train_svc.py
 ├── Model_Evaluation.py
 ├── random_forest_top20_vs_all.py
+├── model_testing.py
 ├── app.py
 
 Once the execution is complete, visit the following URL to check whether a given URL is phishing or legitimate:
