@@ -5,7 +5,7 @@ By analyzing both URL structures and webpage content, PhishShield enhances detec
 
 Built on a well-structured dataset of legitimate and phishing URLs, it ensures a more reliable and scalable defense mechanism against cyber threats. Its efficient detection methodology makes it a powerful tool in combating phishing attacks, ensuring a safer browsing experience in today’s rapidly evolving digital landscape.
 
-To run the whole project in a single run, run the python file main.py
+To run the whole project in a single run, run the python file **main.py**
 
 This will run the scripts in the following sequence:
 
