@@ -6,12 +6,11 @@ import warnings
 warnings.filterwarnings('ignore')
 import json
 import pickle
-
-df = pd.read_csv("preprocessed_data.csv")
-
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
 from sklearn.ensemble import RandomForestClassifier
+
+df = pd.read_csv("preprocessed_data.csv")
 
 # train test split
 X = df.drop(columns=["label"])
