@@ -48,8 +48,8 @@ print(classification_report(y_test, y_pred_rf))
 # Confusion Matrix Visualization
 plt.figure(figsize=(8, 6))
 sns.heatmap(conf_matrix_rf, annot=True, fmt="d", cmap="Blues", cbar=False,
-            xticklabels=["Legitimate", "Phishing"],
-            yticklabels=["Legitimate", "Phishing"])
+            xticklabels=["Phishing", "Legitimate"],
+            yticklabels=["Phishing", "Legitimate"])
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix - Random Forest")
