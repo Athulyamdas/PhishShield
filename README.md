@@ -23,5 +23,4 @@ This will run the scripts in the following sequence:
 ├── model_testing.py
 ├── app.py
 
-Once the execution is complete, visit the following URL to check whether a given URL is phishing or legitimate:
-**http://127.0.0.1:5000/**
+
