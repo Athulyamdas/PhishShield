@@ -29,11 +29,15 @@ df["TLD"] = tld_encoder.fit_transform(df["TLD"])
 df["Title"] = title_encoder.fit_transform(df["Title"])
 print(df["TLD"])
 print(df["Title"])
+
+#saving Encoders using pickcle
+
 with open("tld_encoder.pkl", "wb") as f:
     pickle.dump(tld_encoder, f)
 
 with open("title_encoder.pkl", "wb") as f:
     pickle.dump(title_encoder, f)
+
 print(df.info())
 
 
@@ -48,6 +52,8 @@ features_to_scale = [
 ]
 df[features_to_scale] = scaler.fit_transform(df[features_to_scale])
 print(df)
+
+#saving preprocessed data to csv
 
 df.to_csv("preprocessed_data.csv",index=False)
 

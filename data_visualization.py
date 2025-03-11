@@ -18,6 +18,7 @@ plt.ylabel("Count")
 plt.xticks(ticks=[0, 1], labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of URL Length
 sns.histplot(data=df, x="URLLength", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"URLLength"}")
 plt.xlabel("URL Length")
@@ -25,6 +26,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of Domain Length
 sns.histplot(data=df, x="DomainLength", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"DomainLength"}")
 plt.xlabel("DomainLength")
@@ -32,6 +34,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of Number of Subdomains
 sns.histplot(data=df, x="NoOfSubDomain", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"NoOfSubDomain"}")
 plt.xlabel("No Of SubDomain")
@@ -39,6 +42,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of URL Similarity Index
 sns.histplot(data=phishing_ds, x="URLSimilarityIndex", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"URLSimilarityIndex"}")
 plt.xlabel("URL Similarity Index")
@@ -46,6 +50,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of Letter Ratio in URL
 sns.histplot(data=phishing_ds, x="LetterRatioInURL", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"LetterRatioInURL"}")
 plt.xlabel("Letter Ratio In URL")
@@ -53,6 +58,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Distribution of IsHTTPS
 sns.histplot(data=phishing_ds, x="IsHTTPS", hue="label", kde=True, bins=30, palette=["green", "red"])
 plt.title(f"Distribution of {"IsHTTPS"}")
 plt.xlabel("Is HTTPS")
@@ -60,6 +66,7 @@ plt.ylabel("Count")
 plt.legend(labels=["Phishing", "Legitimate"])
 plt.show()
 
+#Correlation Heatmap
 correlation_matrix = df.corr()
 plt.figure(figsize=(12, 8))
 sns.heatmap(correlation_matrix, cmap="coolwarm", annot=False, linewidths=0.5)
@@ -116,10 +123,10 @@ plt.show()
 num_features = ["NoOfPopup", "NoOfiFrame", "NoOfObfuscatedChar", "NoOfExternalRef"]
 plt.figure(figsize=(12, 8))
 for i, feature in enumerate(num_features, 1):
-    plt.subplot(2, 2, i)
+    plt.subplot(2, 2, i)  #2x2 grid layout
     sns.boxplot(x=df["label"], y=df[feature])
     plt.title(f"Box Plot: {feature} vs. Phishing Label")
-plt.tight_layout()
+plt.tight_layout() # Adjusts the spacing between subplots to prevent overlapping.
 plt.show()
 
 # Count Plot for Categorical Features
