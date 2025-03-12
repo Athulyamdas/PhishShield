@@ -32,12 +32,15 @@ print("Test set size:", X_test.shape)
 ridge_model = Ridge(alpha=1.0)
 ridge_model.fit(X_train, y_train)
 ridge_pred = ridge_model.predict(X_test)
+
 lasso_model = Lasso(alpha=0.01)
 lasso_model.fit(X_train, y_train)
 lasso_pred = lasso_model.predict(X_test)
+
 ridge_mse = mean_squared_error(y_test, ridge_pred)
 ridge_rmse = np.sqrt(ridge_mse)
 ridge_r2 = r2_score(y_test, ridge_pred)
+
 lasso_mse = mean_squared_error(y_test, lasso_pred)
 lasso_rmse = np.sqrt(lasso_mse)
 lasso_r2 = r2_score(y_test, lasso_pred)

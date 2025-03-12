@@ -62,6 +62,7 @@ rf_feature_importance_df = pd.DataFrame({
     'Feature': X_train.columns,
     'Importance': rf_feature_importance
 })
+
 rf_feature_top_20 = rf_feature_importance_df.sort_values(by='Importance', ascending=False).head(20)
 print("Top 20 Features (Random Forest):")
 print(rf_feature_top_20)
@@ -88,6 +89,7 @@ model_results["Random Forest"] = [
 
 with open("model_metrics.json", "w") as f:
     json.dump(model_results, f, indent=4)
+
 
 #saving top 20 features into a json file
 top_20_features_list = rf_feature_top_20.iloc[:, 0].tolist()

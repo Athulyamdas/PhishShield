@@ -77,7 +77,7 @@ with open("model_metrics.json", "w") as f:
     json.dump(model_results, f, indent=4)
 
 
-with open("model_metrics.json", "r") as f:
-    model_results = json.load(f)
+#with open("model_metrics.json", "r") as f:
+#    model_results = json.load(f)
 
 

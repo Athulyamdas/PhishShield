@@ -120,6 +120,7 @@ def extract_additional_features(url, soup):
     
     return features
 
+#Domain Title MatchScore
 def url_similarity(str1, str2):
     set1 = set(str1.lower().split())
     set2 = set(str2.lower().split())
@@ -127,6 +128,7 @@ def url_similarity(str1, str2):
     union = set1.union(set2)
     return len(intersection) / len(union) if union else 0
 
+#Obfuscation
 def check_obfuscation(url):
     obfuscated_patterns = [
         r"%[0-9A-Fa-f]{2}",   
@@ -146,7 +148,7 @@ def check_obfuscation(url):
     return has_obfuscation, obfuscated_count, obfuscation_ratio
 
 
-
+#TLD Legitimacy
 def get_tld_legitimacy(url):
     domain = urlparse(url).netloc
     tld = domain.split('.')[-1] 

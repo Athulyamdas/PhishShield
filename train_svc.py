@@ -30,11 +30,13 @@ print("Test set size:", X_test.shape)
 svc_model = SVC(kernel='linear', random_state=42)
 svc_model.fit(X_train, y_train)
 y_pred_svc = svc_model.predict(X_test)
+
 accuracy_svc = accuracy_score(y_test, y_pred_svc)
 precision_svc = precision_score(y_test, y_pred_svc)
 recall_svc = recall_score(y_test, y_pred_svc)
 f1_svc = f1_score(y_test, y_pred_svc)
 conf_matrix_svc = confusion_matrix(y_test, y_pred_svc)
+
 print(f"SVM Accuracy: {accuracy_svc:.4f}")
 print(f"SVM Precision: {precision_svc:.4f}")
 print(f"SVM Recall: {recall_svc:.4f}")
@@ -52,6 +54,7 @@ svc_feature_importance_df = pd.DataFrame({
 svc_feature_top_20 = svc_feature_importance_df.sort_values(by='Importance', ascending=False).head(20)
 print("Top 20 Features (SVC):")
 print(svc_feature_top_20)
+
 plt.figure(figsize=(10, 6))
 sns.barplot(x='Importance', y='Feature', data=svc_feature_top_20, palette="coolwarm")
 plt.title("Top 20 Important Features - SVC")

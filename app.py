@@ -52,7 +52,7 @@ def get_feature_values(input_url):
         if "Title" in feature_values.index:
             feature_values["Title"] = title_encoder.transform([feature_values["Title"]])[0]
 
-        feature_values = feature_values.astype(float).to_numpy().reshape(1, -1)
+        feature_values = feature_values.astype(float).to_numpy().reshape(1, -1) #convert to numpy array
         return feature_values
 
     else:

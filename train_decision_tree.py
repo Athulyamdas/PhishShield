@@ -9,15 +9,12 @@ import json
 df = pd.read_csv("preprocessed_data.csv")
 
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
-from sklearn.linear_model import Ridge, Lasso, LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.inspection import permutation_importance
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
+from sklearn.tree import export_graphviz
+import graphviz
+
 
 # train test split
 X = df.drop(columns=["label"])
@@ -90,3 +87,4 @@ model_results["Decision Tree"] = [
 
 with open("model_metrics.json", "w") as f:
     json.dump(model_results, f, indent=4)
+

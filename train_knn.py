@@ -30,11 +30,13 @@ print("Test set size:", X_test.shape)
 knn_model = KNeighborsClassifier(n_neighbors=5)
 knn_model.fit(X_train, y_train)
 y_pred_knn = knn_model.predict(X_test)
+
 accuracy_knn = accuracy_score(y_test, y_pred_knn)
 precision_knn = precision_score(y_test, y_pred_knn)
 recall_knn = recall_score(y_test, y_pred_knn)
 f1_knn = f1_score(y_test, y_pred_knn)
 conf_matrix_knn = confusion_matrix(y_test, y_pred_knn)
+
 print(f"Accuracy: {accuracy_knn:.4f}")
 print(f"Precision: {precision_knn:.4f}")
 print(f"Recall: {recall_knn:.4f}")
@@ -47,13 +49,15 @@ print(classification_report(y_test, y_pred_knn))
 # Using Distance-Based Feature Importance
 distances, indices = knn_model.kneighbors(X_test)
 feature_importance_knn = np.zeros(X_train.shape[1])
+
 for i, idx in enumerate(indices):
-    neighbor_samples = X_train.iloc[idx]
+    neighbor_samples = X_train.iloc[idx] #Extracts 5 nearest training neighbors
     feature_diffs = np.abs(X_test.iloc[i] - neighbor_samples).mean(axis=0)
     feature_importance_knn += feature_diffs.values
 print(feature_importance_knn)
 
-feature_importance_knn /= len(X_test)
+feature_importance_knn /= len(X_test) #Computes the average importance score across all test samples (normalizing)
+
 knn_feature_importance_df = pd.DataFrame({
     'Feature': X_train.columns,
     'Importance': feature_importance_knn
