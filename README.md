@@ -24,5 +24,7 @@ This will run the scripts in the following sequence:
 ├── app.py
 
 
+*Web Interface for Prediction*
+
 ![2](https://github.com/user-attachments/assets/960b3873-a6ad-4ea5-aef5-f852d1203ce1)
 
