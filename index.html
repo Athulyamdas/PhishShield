@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+   <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+</head>
+<body style="background: url('{{ url_for('static', filename='images/p1.jpg') }}')
+            no-repeat center center fixed; background-size: cover; color: white; height: 100vh; margin: 0;
+            overflow: hidden;">
+
+    <div class="title"
+        style="margin-top: 20px;
+        padding-top: 40px;
+        padding-right: 30px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        width: 800px;
+        margin: auto;
+        color:white"
+        >
+        <h1 style="font-size:40px">PhishShield: Online Phishing URL Detector </h1>
+    </div>
+
+    <div class="container"
+        style="margin-top: 10px;
+        padding-top: 10px;
+        padding-left: 0px;
+        padding-right: 10px;
+        width: 800px;
+        margin-left: 280px;
+        color:black">
+        <input type="text" id="url" placeholder="Enter your URL here"
+        style="width:450px;
+        padding-left:0px;
+        height: 40px;
+        margin: auto;
+        width: 720px;
+        font-size:20px;
+        font-family:'Times New Roman', Times, serif;">
+
+    </div>
+
+    <div class="button"
+    style="margin-top: 10px;
+        padding-top: 40px;
+        padding-left: 200px;
+        padding-right: 10px;
+        width: 100px;
+        margin-left: 280px;
+        color:black">
+      <button onclick="checkURL()"
+              onmouseover="this.style.backgroundColor='#e65c00'; this.style.color='white';"
+              onmouseout="this.style.backgroundColor=''; this.style.color='black';"
+              style="width:450px;
+            padding-left:0px;
+            height: 40px;
+            margin: auto;
+            width: 250px;
+            font-size:20px;
+            font-family:'Times New Roman', Times, serif;
+            "
+      >Check</button>
+    </div>
+
+    <div class="result-container"
+    style="margin-top: 40px;
+    margin-left:450px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left:0px;
+        width: 300px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Times New Roman', Times, serif;
+        display: none;
+        transition: all 0.5s ease;">
+    <p id="result" style="margin: 0;
+    padding-left:0px;">
+    </p>
+</div>
+
+
+    <script>
+        function checkURL() {
+            var url = document.getElementById("url").value;
+            var formData = new FormData();
+            formData.append("url", url);
+
+            fetch("/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                            var resultBox = document.querySelector(".result-container");
+                            var resultText = document.getElementById("result");
+                            resultText.innerHTML = data.prediction;
+
+                            // Color coding the result
+
+                            if (data.prediction === "Phishing!! Be Careful !!!")
+                            {
+                            resultText.style.color = "#ff4d4d";  // Red color for phishing
+                            }
+                            else if (data.prediction === "Legitimate. You are Safe !!!")
+                            {
+                            resultText.style.color = "#66ff66";  // Green color for legitimate
+                            }
+                            else
+                            {
+                            resultText.style.color = "#ffcc00";  // Yellow color for other messages
+                            }
+
+                        resultBox.style.display = "block";
+
+                    })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>
